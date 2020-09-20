@@ -38,36 +38,6 @@ df = demographic_data.drop(["est_age",'cons_n2mob','cons_n2pbl','cons_n2pmv'],ax
 df
 
 
-# In[100]:
-
-
-label_encoder = LabelEncoder()
-df['cons_cmys'] = label_encoder.fit_transform(df['cons_cmys'])
-df['sex_cd'] = label_encoder.fit_transform(df['sex_cd'])
-df['cnty_cd'] = label_encoder.fit_transform(df['cnty_cd'])
-df['state_cd'] = label_encoder.fit_transform(df['state_cd'])
-df['cons_cmys'] = label_encoder.fit_transform(df['cons_cmys'])
-df['cons_hhcomp'] = label_encoder.fit_transform(df['cons_hhcomp'])
-df['cons_homstat'] = label_encoder.fit_transform(df['cons_homstat'])
-df['lang_spoken_cd'] = label_encoder.fit_transform(df['lang_spoken_cd'])
-df['cons_hcaccprf_h'] = label_encoder.fit_transform(df['cons_hcaccprf_h'])
-df['cons_hcaccprf_p'] = label_encoder.fit_transform(df['cons_hcaccprf_p'])
-df['cons_n2029_y'] = label_encoder.fit_transform(df['cons_n2029_y'])
-df['cons_n65p_y'] = label_encoder.fit_transform(df['cons_n65p_y'])
-df['cons_online_buyer'] = label_encoder.fit_transform(df['cons_online_buyer'])
-df['cons_ret_y'] = label_encoder.fit_transform(df['cons_ret_y'])
-df['cons_n65p_y'] = label_encoder.fit_transform(df['cons_n65p_y'])
-
-
-# In[129]:
-
-
-from sklearn.preprocessing import OneHotEncoder
-df=OneHotEncoder().fit_transform(df)
-
-
-# In[134]:
-
 
 df=df.apply(LabelEncoder().fit_transform)
 
